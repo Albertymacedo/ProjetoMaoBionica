@@ -1,7 +1,6 @@
 package Model;
 
-import javax.security.auth.callback.Callback;
-
 public interface IListener {
-
+    Boolean OnSucess();
+    Boolean OnError();
 }
