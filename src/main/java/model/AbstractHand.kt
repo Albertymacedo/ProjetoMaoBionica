@@ -1,5 +1,4 @@
 package model
 
-abstract class AbstractHand {
-
+abstract class AbstractHand (val fingers: Int, val type: HandTypes){
 }

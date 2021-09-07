@@ -2,26 +2,37 @@ package model
 
 import data.IHand
 import data.IListener
+import java.lang.IllegalArgumentException
 
-/** TODO
- *      Tá dando Erro Porque AbstractHand
- *      ta vazio apartir desse commit.
- * **/
+class Hand(
+    fingers: Int,
+    material: HandTypes): AbstractHand(fingers, material), IHand {
 
-class Hand: AbstractHand, IHand {
     override fun Empurrar(listener: IListener?): Boolean {
-        return false
+        if(listener == null) return false
+        if(listener.onSuccess()) return true
+        if(listener.onFailure()) return false
+        throw IllegalArgumentException("Evento desconhecido.")
     }
 
     override fun Pegar(listener: IListener?): Boolean {
-        return false
+        if(listener == null) return false
+        if(listener.onSuccess()) return true
+        if(listener.onFailure()) return false
+        throw IllegalArgumentException("Evento desconhecido.")
     }
 
     override fun Apoiar(listener: IListener?): Boolean {
-        return false
+        if(listener == null) return false
+        if(listener.onSuccess()) return true
+        if(listener.onFailure()) return false
+        throw IllegalArgumentException("Evento desconhecido.")
     }
 
     override fun Soltar(listener: IListener?): Boolean {
-        return false
+        if(listener == null) return false
+        if(listener.onSuccess()) return true
+        if(listener.onFailure()) return false
+        throw IllegalArgumentException("Evento desconhecido.")
     }
 }
